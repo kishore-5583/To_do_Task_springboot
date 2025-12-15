@@ -1,6 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,10 +38,58 @@
             border-radius: 5px;
             font-size: 16px;
         }
+		.alert-success {
+		    background-color: #28a745;
+		    color: white;
+		    padding: 10px;
+		    border-radius: 5px;
+		    text-align: center; 
+		    margin-bottom: 15px;
+		}
+
+		.alert-error {
+		    background-color: #dc3545;
+		    color: white;
+		    padding: 10px;
+		    border-radius: 5px;
+		    text-align: center; 
+		    margin-bottom: 15px;
+		}
+		button{
+			cursor : pointer;
+		}
+		button:hover { 
+		    background-color: #45a049;
+		}
+		
+
     </style>
 </head>
 
 <body>
+
+<%-- Check if there is a success message --%>
+<% if(request.getAttribute("successMessage") != null) { %>
+    <div class="alert-success" id="successMessage">
+        <%= request.getAttribute("successMessage") %>
+    </div>
+	<% } %>
+	<% if(request.getAttribute("errorMessage") != null) { %>
+		<div class="alert-success" id="successMessage">
+		        <%= request.getAttribute("errorMessage") %>
+		</div>
+		<% } %>	
+    <script>
+        setTimeout(function() {
+            document.getElementById("successMessage").style.display = "none";
+        }, 5000); // Hide the message after 5 seconds
+    </script>
+	
+	<script>
+	        setTimeout(function() {
+	            document.getElementById("errorMessage").style.display = "none";
+	        }, 5000); // Hide the message after 5 seconds
+	</script>
 
 <div class="register-box">
     <h2>Register</h2>
@@ -86,7 +132,10 @@
             <input type="checkbox" required /> I agree to Terms & Conditions
         </label>
 
-        <button type="submit">Register</button>
+		<div class="button-container">
+			<button type="submit" class="register-btn">Register</button>
+		    <button type="button" class="login-btn" onclick="window.location.href='/login'">Login</button>
+		 </div>
     </form>
 </div>
 
