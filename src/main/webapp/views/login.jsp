@@ -1,4 +1,4 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,7 +82,7 @@
     <div class="login-box">
         <h2>Login</h2>
 
-        <label>Username</label>
+        <label>Email</label>
         <input type="text" name="username" placeholder="Enter username" required />
 
         <label>Password</label>

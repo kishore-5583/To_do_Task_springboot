@@ -6,21 +6,29 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 @Entity
-@Table(name = "user_registration")
+@Table(name = "userr_registration")
 public class userRegEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String fullName;
 	private String email;
-	private String password;
-	private String confirmPassword;
 	private Integer age;
 	private String gender;
-	private String occupation;
 	private String mobile;
 	private String address;
+	private String occupation;
+	private String password;
+	private String confirmPassword;
+	
+	public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+	
 	public String getFullName() {
 		return fullName;
 	}

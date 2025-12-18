@@ -81,7 +81,7 @@
             <button type="submit" class="add-task-btn">Add Task</button>
         </form>
 
-        <form action="/logout" method="get">
+        <form action="/logout" method="post">
             <button type="submit" class="logout-btn">Logout</button>
         </form>
     </div>
